@@ -107,7 +107,7 @@ function char_offset(offset)
 
 achievement(
     title = "Happy Little Snowflake", description = "Collect your first snowflake at Happiness", points = 2,
-    trigger = no_cheating() && any_of(char_offset(0xAC), a => 0x01) && area() == 0x0e
+    trigger = no_cheating() && any_of(char_offset(0xAC), a => 0x01) == true && area() == 0x0e
 )
 
 //2. Win a medal at the Snow Jam race competition (3 points)
