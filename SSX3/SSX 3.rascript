@@ -151,6 +151,51 @@ function char_offset(offset)
   }
   
   return offset_array
+}
+
+//returns 32-bit value of the current character at the offset
+function current_char_dword(offset)
+{
+    if (current_char() == 0x00)
+    {
+        return dword(moby_pointer()+offset)
+    }
+    else if (current_char() == 0x01)
+    {
+        return dword(kaori_pointer()+offset)
+    }
+    else if (current_char() == 0x02)
+    {
+        return dword(allegra_pointer()+offset)
+    }
+    else if (current_char() == 0x03)
+    {
+        return dword(mac_pointer()+offset)
+    }
+    else if (current_char() == 0x04)
+    {
+        return dword(zoe_pointer()+offset)
+    }
+    else if (current_char() == 0x05)
+    {
+        return dword(griff_pointer()+offset)
+    }
+    else if(current_char() == 0x06)
+    {
+        return dword(elise_pointer()+offset)
+    }
+    else if(current_char() == 0x07)
+    {
+        return dword(nate_pointer()+offset)
+    }
+    else if(current_char() == 0x08)
+    {
+        return dword(psymon_pointer()+offset)
+    }
+    else
+    {
+        return dword(viggo_pointer()+offset)
+    }
 } 
 
 //1. Collect a snowflake at Happiness (2 points)
@@ -366,7 +411,7 @@ achievement(
 )
 
 achievement(
-    title = "Far East Myth", description = "Unlock Far East Myth by getting 100 percent on all mountain stats", points = 25,
+    title = "Far East Myth", description = "Unlock Far East Myth by getting 100 percent on all mountain stats", points = 50,
     trigger = no_cheating() && any_of(char_offset(0xF59), a => bit3
     (a) == 1 && prev(bit3(a)) == 0)
 )
@@ -839,4 +884,11 @@ rich_presence_display("{0} is {1} at {2}",
     rich_presence_lookup("char", current_char(), character),
     rich_presence_lookup("mode", game_mode(), game),
     rich_presence_lookup("place", area(), areas)
+)
+
+leaderboard(
+    title = "Snow Jam", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 0x00 
+    && any_of(char_offset(0xB34), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB34), 
+    format="SECS", lower_is_better=true, id=0
 )
