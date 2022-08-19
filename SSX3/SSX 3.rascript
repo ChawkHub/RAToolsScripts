@@ -156,46 +156,9 @@ function char_offset(offset)
 //returns 32-bit value of the current character at the offset
 function current_char_dword(offset)
 {
-    if (current_char() == 0x00)
-    {
-        return dword(moby_pointer()+offset)
-    }
-    else if (current_char() == 0x01)
-    {
-        return dword(kaori_pointer()+offset)
-    }
-    else if (current_char() == 0x02)
-    {
-        return dword(allegra_pointer()+offset)
-    }
-    else if (current_char() == 0x03)
-    {
-        return dword(mac_pointer()+offset)
-    }
-    else if (current_char() == 0x04)
-    {
-        return dword(zoe_pointer()+offset)
-    }
-    else if (current_char() == 0x05)
-    {
-        return dword(griff_pointer()+offset)
-    }
-    else if(current_char() == 0x06)
-    {
-        return dword(elise_pointer()+offset)
-    }
-    else if(current_char() == 0x07)
-    {
-        return dword(nate_pointer()+offset)
-    }
-    else if(current_char() == 0x08)
-    {
-        return dword(psymon_pointer()+offset)
-    }
-    else
-    {
-        return dword(viggo_pointer()+offset)
-    }
+    return dword(0x4A6CA8 +                // base pointer (for element 0 of array)
+                 current_char() * 0xF88 +  // each array element is 0xF88 bytes long, selected character is array index
+                 offset)                   // offset within array element
 } 
 
 //1. Collect a snowflake at Happiness (2 points)
@@ -887,8 +850,183 @@ rich_presence_display("{0} is {1} at {2}",
 )
 
 leaderboard(
-    title = "Snow Jam", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 0x00 
+    title = "Snow Jam", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 00
     && any_of(char_offset(0xB34), a => dword(a) != prev(dword(a))), 
     cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB34), 
     format="SECS", lower_is_better=true, id=0
+)
+
+leaderboard(
+    title = "Metro-City", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 01
+    && any_of(char_offset(0xB3C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB3C), 
+    format="SECS", lower_is_better=true, id=1
+)
+
+leaderboard(
+    title = "Happiness - Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 14
+    && any_of(char_offset(0xB04), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB04), 
+    format="SECS", lower_is_better=true, id=2
+)
+
+leaderboard(
+    title = "Peak 1 Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 01
+    && any_of(char_offset(0xAD4), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xAD4), 
+    format="SECS", lower_is_better=true, id=3
+)
+
+leaderboard(
+    title = "Ruthless Ridge", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 02
+    && any_of(char_offset(0xB44), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB44), 
+    format="SECS", lower_is_better=true, id=4
+)
+
+leaderboard(
+    title = "Intimidator", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 03
+    && any_of(char_offset(0xB4C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB4C), 
+    format="SECS", lower_is_better=true, id=5
+)
+
+leaderboard(
+    title = "Ruthless - Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 15
+    && any_of(char_offset(0xB14), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB14), 
+    format="SECS", lower_is_better=true, id=6
+)
+
+leaderboard(
+    title = "Peak 2 Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 01
+    && any_of(char_offset(0xADC), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xADC), 
+    format="SECS", lower_is_better=true, id=7
+)
+
+leaderboard(
+    title = "Gravitude", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 04
+    && any_of(char_offset(0xB54), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB54), 
+    format="SECS", lower_is_better=true, id=8
+)
+
+leaderboard(
+    title = "The Throne - Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 16
+    && any_of(char_offset(0xB24), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB24), 
+    format="SECS", lower_is_better=true, id=9
+)
+
+leaderboard(
+    title = "All Peak Race", description = "Quickest time in conquer the mountain", start = no_cheating() && area() == 01
+    && any_of(char_offset(0xAE4), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xAE4), 
+    format="SECS", lower_is_better=true, id=10
+)
+
+leaderboard(
+    title = "R&B", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 05
+    && any_of(char_offset(0xB5C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB5C), 
+    format="VALUE", lower_is_better=false, id=11
+)
+
+leaderboard(
+    title = "Crow's Nest", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 08
+    && any_of(char_offset(0xB74), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB74), 
+    format="VALUE", lower_is_better=false, id=12
+)
+
+leaderboard(
+    title = "The Junction", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 11
+    && any_of(char_offset(0xB8C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB8C), 
+    format="VALUE", lower_is_better=false, id=13
+)
+
+leaderboard(
+    title = "Happiness Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 14
+    && any_of(char_offset(0xB0C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB0C), 
+    format="VALUE", lower_is_better=false, id=14
+)
+
+leaderboard(
+    title = "Peak 1 Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 05
+    && any_of(char_offset(0xAEC), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xAEC), 
+    format="VALUE", lower_is_better=false, id=15
+)
+
+leaderboard(
+    title = "Style Mile", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 06
+    && any_of(char_offset(0xB64), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB64), 
+    format="VALUE", lower_is_better=false, id=16
+)
+
+leaderboard(
+    title = "Launch Time", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 09
+    && any_of(char_offset(0xB7C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB7C), 
+    format="VALUE", lower_is_better=false, id=17
+)
+
+leaderboard(
+    title = "Schizophrenia", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 12
+    && any_of(char_offset(0xB94), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB94), 
+    format="VALUE", lower_is_better=false, id=18
+)
+
+leaderboard(
+    title = "Ruthless Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 15
+    && any_of(char_offset(0xB1C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB1C), 
+    format="VALUE", lower_is_better=false, id=19
+)
+
+leaderboard(
+    title = "Peak 2 Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 06
+    && any_of(char_offset(0xAF4), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xAF4), 
+    format="VALUE", lower_is_better=false, id=20
+)
+
+leaderboard(
+    title = "Kick Doubt", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 07
+    && any_of(char_offset(0xB6C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB6C), 
+    format="VALUE", lower_is_better=false, id=21
+)
+
+leaderboard(
+    title = "Much-2-Much", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 10
+    && any_of(char_offset(0xB84), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB84), 
+    format="VALUE", lower_is_better=false, id=22
+)
+
+leaderboard(
+    title = "Perpendiculous", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 13
+    && any_of(char_offset(0xB9C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB9C), 
+    format="VALUE", lower_is_better=false, id=23
+)
+
+leaderboard(
+    title = "Throne Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 16
+    && any_of(char_offset(0xB2C), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xB2C), 
+    format="VALUE", lower_is_better=false, id=24
+)
+
+leaderboard(
+    title = "All-Peak Jam", description = "Highest score in conquer the mountain", start = no_cheating() && area() == 01
+    && any_of(char_offset(0xAFC), a => dword(a) != prev(dword(a))), 
+    cancel = 1 == 0, submit = 1 == 1, value = current_char_dword(0xAFC), 
+    format="VALUE", lower_is_better=false, id=25
 )
