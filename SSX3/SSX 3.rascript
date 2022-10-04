@@ -671,121 +671,121 @@ achievement(
 //1. Platinum Medals x 26 (probably ~10 each?, they're pretty hard but they can probably be chained once you get a feel for the game. maybe 25 for some)
 
 achievement(
-    title = "Snow Jam Platinum Challenge", description = "Achieve a platinum medal at Snow Jam", points = 25,
+    title = "Snow Jam Platinum Challenge", description = "Achieve a platinum medal at Snow Jam", points = 10,
     trigger = no_cheating() && area() == 0x00 && any_of(char_offset(0xB31), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Metro-City Platinum Challenge", description = "Achieve a platinum medal at Metro-City", points = 25,
+    title = "Metro-City Platinum Challenge", description = "Achieve a platinum medal at Metro-City", points = 10,
     trigger = no_cheating() && area() == 0x01 && any_of(char_offset(0xB39), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Ruthless Ridge Platinum Challenge", description = "Achieve a platinum medal at Ruthless Ridge", points = 25,
+    title = "Ruthless Ridge Platinum Challenge", description = "Achieve a platinum medal at Ruthless Ridge", points = 10,
     trigger = no_cheating() && area() == 0x02 && any_of(char_offset(0xB41), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Intimidator Platinum Challenge", description = "Achieve a platinum medal at Intimidator", points = 25,
+    title = "Intimidator Platinum Challenge", description = "Achieve a platinum medal at Intimidator", points = 10,
     trigger = no_cheating() && area() == 0x03 && any_of(char_offset(0xB49), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Gravitude Platinum Challenge", description = "Achieve a platinum medal at Gravitude", points = 25,
+    title = "Gravitude Platinum Challenge", description = "Achieve a platinum medal at Gravitude", points = 10,
     trigger = no_cheating() && area() == 0x04 && any_of(char_offset(0xB51), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "R&B Platinum Challenge", description = "Achieve a platinum medal at R&B", points = 25,
+    title = "R&B Platinum Challenge", description = "Achieve a platinum medal at R&B", points = 10,
     trigger = no_cheating() && area() == 0x05 && any_of(char_offset(0xB59), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Style Mile Platinum Challenge", description = "Achieve a platinum medal at Style Mile", points = 25,
+    title = "Style Mile Platinum Challenge", description = "Achieve a platinum medal at Style Mile", points = 10,
     trigger = no_cheating() && area() == 0x06 && any_of(char_offset(0xB61), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Kick Doubt Platinum Challenge", description = "Achieve a platinum medal at Kick Doubt", points = 25,
+    title = "Kick Doubt Platinum Challenge", description = "Achieve a platinum medal at Kick Doubt", points = 10,
     trigger = no_cheating() && area() == 0x07 && any_of(char_offset(0xB69), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Crow's Nest Platinum Challenge", description = "Achieve a platinum medal at Crow's Nest", points = 25,
+    title = "Crow's Nest Platinum Challenge", description = "Achieve a platinum medal at Crow's Nest", points = 10,
     trigger = no_cheating() && area() == 0x08 && any_of(char_offset(0xB71), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Launch Time Platinum Challenge", description = "Achieve a platinum medal at Launch Time", points = 25,
+    title = "Launch Time Platinum Challenge", description = "Achieve a platinum medal at Launch Time", points = 10,
     trigger = no_cheating() && area() == 0x09 && any_of(char_offset(0xB79), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Much-2-Much Platinum Challenge", description = "Achieve a platinum medal at Much-2-Much", points = 25,
+    title = "Much-2-Much Platinum Challenge", description = "Achieve a platinum medal at Much-2-Much", points = 10,
     trigger = no_cheating() && area() == 0x0a && any_of(char_offset(0xB81), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "The Junction Platinum Challenge", description = "Achieve a platinum medal at The Junction", points = 25,
+    title = "The Junction Platinum Challenge", description = "Achieve a platinum medal at The Junction", points = 10,
     trigger = no_cheating() && area() == 0x0b && any_of(char_offset(0xB89), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Schizophrenia Platinum Challenge", description = "Achieve a platinum medal at Schizophrenia", points = 25,
+    title = "Schizophrenia Platinum Challenge", description = "Achieve a platinum medal at Schizophrenia", points = 10,
     trigger = no_cheating() && area() == 0x0c && any_of(char_offset(0xB91), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Perpendiculous Platinum Challenge", description = "Achieve a platinum medal at Perpendiculous", points = 25,
+    title = "Perpendiculous Platinum Challenge", description = "Achieve a platinum medal at Perpendiculous", points = 10,
     trigger = no_cheating() && area() == 0x0d && any_of(char_offset(0xB99), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Happiness Race Platinum Challenge", description = "Achieve a platinum medal at Happiness", points = 25,
+    title = "Happiness Race Platinum Challenge", description = "Achieve a platinum medal at Happiness", points = 10,
     trigger = no_cheating() && area() == 0x0e && any_of(char_offset(0xB01), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Ruthless Race Platinum Challenge", description = "Achieve a platinum medal at Ruthless", points = 25,
+    title = "Ruthless Race Platinum Challenge", description = "Achieve a platinum medal at Ruthless", points = 10,
     trigger = no_cheating() && area() == 0x0f && any_of(char_offset(0xB11), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "The Throne Race Platinum Challenge", description = "Achieve a platinum medal at The Throne", points = 25,
+    title = "The Throne Race Platinum Challenge", description = "Achieve a platinum medal at The Throne", points = 10,
     trigger = no_cheating() && area() == 0x10 && any_of(char_offset(0xB21), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Happiness Freestyle Platinum Challenge", description = "Achieve a platinum medal at Happiness (freestyle)", points = 25,
+    title = "Happiness Freestyle Platinum Challenge", description = "Achieve a platinum medal at Happiness (freestyle)", points = 10,
     trigger = no_cheating() && area() == 0x0e && any_of(char_offset(0xB09), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "Ruthless Freestyle Platinum Challenge", description = "Achieve a platinum medal at Ruthless (freestyle)", points = 25,
+    title = "Ruthless Freestyle Platinum Challenge", description = "Achieve a platinum medal at Ruthless (freestyle)", points = 10,
     trigger = no_cheating() && area() == 0x0f && any_of(char_offset(0xB19), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )
 
 achievement(
-    title = "The Throne Freestyle Platinum Challenge", description = "Achieve a platinum medal at The Throne (freestyle)", points = 25,
+    title = "The Throne Freestyle Platinum Challenge", description = "Achieve a platinum medal at The Throne (freestyle)", points = 10,
     trigger = no_cheating() && area() == 0x10 && any_of(char_offset(0xB29), a => byte
     (a) == 0 && prev(byte(a)) > 0)
 )

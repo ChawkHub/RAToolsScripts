@@ -156,9 +156,9 @@ achievement(
 )
 
 achievement(
-    title = "Rematch with Brendan", description = "Defeat Brendan near the entrance to Diglett's Cave", points = 5,
+    title = "Rematch with Brendan", description = "Defeat Brendan near Vermillion City", points = 5,
     id = 178461, badge = "198880", published = "10/16/2021 4:58:17 AM", modified = "10/17/2021 1:27:39 PM",
-    trigger = word(0x0406AE) == 0x32 && word(0x02BE8A) == 0x01 && prev(word(0x02BE8A)) == 0x00 && word(0x03EE10) == 0x6F && 
+    trigger = word(0x0406AE) == 0x32 && word(0x02BE8A) == 0x01 && prev(word(0x02BE8A)) == 0x00 && (word(0x03EE10) == 0x6F || word(0x03EE10) == 0x80) && 
               byte(0x005078) != 0x02
 )
 
@@ -564,8 +564,8 @@ achievement(
 
 achievement(
     title = "TM Master [m]", description = "Collect all of the TMs and open your TM case", points = 50,
-    id = 178487, badge = "198907", published = "10/16/2021 6:39:00 AM", modified = "11/8/2021 9:42:22 PM",
-    trigger = word(0x0445BC) == 0x1BA && word(0x0445BE) == 0x01
+    id = 178487, badge = "198907", published = "10/16/2021 6:39:00 AM",
+    trigger = ((word(0x0445BC) == 0x1BA) && word(0x0445BE) == 0x01 && dword(0x003924) == 0x949792D || (word(0x0445e8) == 0x1BA) && word(0x0445ea) == 0x01 && dword(0x003924) == 0x94A4D5D)
 )
 
 achievement(
